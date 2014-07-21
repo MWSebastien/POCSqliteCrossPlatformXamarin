@@ -100,9 +100,9 @@ Global
 		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|Any CPU.ActiveCfg = Debug|iPhone
 		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|Any CPU.Deploy.0 = Debug|iPhone
-		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|ARM.ActiveCfg = Debug|iPhoneSimulator
-		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|ARM.Build.0 = Debug|iPhoneSimulator
-		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|ARM.Deploy.0 = Debug|iPhoneSimulator
+		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|ARM.ActiveCfg = Debug|iPhone
+		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|ARM.Build.0 = Debug|iPhone
+		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|ARM.Deploy.0 = Debug|iPhone
 		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|iPhone.Build.0 = Debug|iPhone
 		{55250E39-0687-4B4E-83F2-AFDC7A54C336}.Debug|iPhone.Deploy.0 = Debug|iPhone

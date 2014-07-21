@@ -37,13 +37,8 @@
     <Compile Include="App.cs" />
     <Compile Include="DataModels\VelibData.cs" />
     <Compile Include="Data\VelibDatabase.cs" />
-    <Compile Include="IRestService.cs" />
-    <Compile Include="IService.cs" />
     <Compile Include="Models\Velib.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\RestService.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Views\PageTest.xaml.cs">
       <DependentUpon>PageTest.xaml</DependentUpon>
     </Compile>
