@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.IO.IsolatedStorage;
-using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Windows.Storage;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using POC.Data;
+using SQLite.Net.Platform.WindowsPhone8;
+using Windows.Storage;
 using Xamarin.Forms;
 
 
@@ -25,10 +20,28 @@ namespace POC.WinPhone
             Forms.Init();
             
             //Sqlite connection
-            POC.App.SetDatabaseConnection(GetConnection());
+
+            this.Loaded += MainPage_Loaded;
+
+        }
+
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            var sqliteFilename = "db.sqlite";
+            string path = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, sqliteFilename));
+            var file = await StorageFile.GetFileFromPathAsync(path);
 
 
-            Content = POC.App.GetMainPage().ConvertPageToUIElement(this);
+            // Copy the database across (if it doesn't exist)
+            IsolatedStorageFile ISF = IsolatedStorageFile.GetUserStoreForApplication();
+            if (!ISF.FileExists(sqliteFilename))
+            {
+
+                CopyFromContentToStorage(ISF, "Assets/" + sqliteFilename, sqliteFilename);
+
+            }
+
+            VelibDatabase dataBase = new VelibDatabase(new SQLitePlatformWP8(), path);
 
         }
 
@@ -55,6 +68,8 @@ namespace POC.WinPhone
         private void CopyFromContentToStorage(IsolatedStorageFile ISF, String SourceFile, String DestinationFile)
         {
             Stream Stream = Application.GetResourceStream(new Uri(SourceFile, UriKind.Relative)).Stream;
+
+
             IsolatedStorageFileStream ISFS = new IsolatedStorageFileStream(DestinationFile, System.IO.FileMode.Create, System.IO.FileAccess.Write, ISF);
             CopyStream(Stream, ISFS);
             ISFS.Flush();

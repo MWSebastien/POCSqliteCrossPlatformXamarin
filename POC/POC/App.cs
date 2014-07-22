@@ -33,24 +33,24 @@ namespace POC
         }
 
 
-        static SQLite.Net.SQLiteConnection _conn;
-        static VelibDatabase _database;
+        //static SQLite.Net.SQLiteConnection _conn;
+        //static VelibDatabase _database;
 
-        public static void SetDatabaseConnection(SQLite.Net.SQLiteConnection connection)
-        {
-            _conn = connection;
-            _database = new VelibDatabase(_conn);
-        }
+        //public static void SetDatabaseConnection(SQLite.Net.SQLiteConnection connection)
+        //{
+        //    _conn = connection;
+        //    _database = new VelibDatabase(_conn);
+        //}
 
-        public static VelibDatabase Database
-        {
-            get { return _database; }
-        }
+        //public static VelibDatabase Database
+        //{
+        //    get { return _database; }
+        //}
 
-        public static SQLite.Net.SQLiteConnection conn
-        {
-            get { return _conn; }
-        }
+        //public static SQLite.Net.SQLiteConnection conn
+        //{
+        //    get { return _conn; }
+        //}
 
 
     }

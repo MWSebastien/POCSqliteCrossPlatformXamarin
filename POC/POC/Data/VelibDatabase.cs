@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using POC.DataModels;
+using SQLite;
 using SQLite.Net;
+using SQLite.Net.Interop;
 
 namespace POC.Data
 {
@@ -15,9 +17,9 @@ namespace POC.Data
 
         SQLiteConnection database;
 
-        public VelibDatabase(SQLiteConnection conn)
+        public VelibDatabase(ISQLitePlatform conn, string dbPath)
         {
-            database = conn;
+            database = new SQLiteConnection(conn, dbPath);
             //database.CreateTable<VelibData>();
         }
 

@@ -26,7 +26,7 @@ namespace POC.Views
         {
             ListView lv = new ListView();
 
-            lv.ItemsSource = POC.App.Database.GetItems();
+            //lv.ItemsSource = POC.App.Database.GetItems();
 
             lv.ItemTemplate = new DataTemplate(() =>
             {
